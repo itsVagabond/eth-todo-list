@@ -96,6 +96,12 @@ App = {
 
             $newTaskTemplate.show();
         }
+    },
+    createTask: async () => {
+        App.setLoading(true);
+        const content = $('#newTask').val();
+        await App.todoList.createTask(content);
+        window.location.reload();
     }
 }
 
